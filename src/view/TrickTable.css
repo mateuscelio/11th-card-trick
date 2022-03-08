@@ -1,0 +1,18 @@
+.trick-table {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding: 20px;
+}
+
+.trick-table__cards {
+  cursor: pointer;
+  margin: 10px;
+}
+.trick-table__cards:hover {
+  background-color: rgba(240, 240, 240, 0.411);
+
+  margin: 9px;
+  border-radius: 20px;
+  border: solid 1px black;
+}
