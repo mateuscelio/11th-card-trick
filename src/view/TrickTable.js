@@ -22,7 +22,6 @@ export default function TrickTable() {
       selectedColumn,
       currentStep: state.currentTrickStep,
     });
-    console.log(orderedDeck);
     setState({
       trickDeck: orderedDeck,
       currentTrickStep: step + 1,
