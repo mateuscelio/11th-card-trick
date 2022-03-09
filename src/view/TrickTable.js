@@ -9,11 +9,15 @@ import Card from "./Card";
 import "./TrickTable.css";
 
 export default function TrickTable() {
-  const [state, setState] = useState({
-    trickDeck: getShuffledTrickDeck(),
-    currentTrickStep: 0,
-    cardChosen: null,
-  });
+  const initialDeck = generateDeck();
+  const genStartStateValue = () => {
+    return {
+      trickDeck: getShuffledTrickDeck(),
+      currentTrickStep: 0,
+      cardChosen: null,
+    };
+  };
+  const [state, setState] = useState(genStartStateValue());
 
   const handleColumnClick = (selectedColumn) => {
     const { orderedDeck, cardChosen, step } = iterateTrick({
@@ -26,6 +30,10 @@ export default function TrickTable() {
       currentTrickStep: step + 1,
       cardChosen: cardChosen,
     });
+  };
+
+  const handleRestartClick = () => {
+    setState(genStartStateValue());
   };
 
   const renderCards = (column) => {
@@ -45,9 +53,10 @@ export default function TrickTable() {
   const renderTrickTable = () => {
     if (state.cardChosen) {
       return (
-        <div className="trick-result">
+        <div>
           <p>The card chosen was</p>
           <Card card={state.cardChosen} />
+          <button onClick={handleRestartClick}>Restart</button>
         </div>
       );
     } else {
