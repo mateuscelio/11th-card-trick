@@ -9,7 +9,6 @@ import Card from "./Card";
 import "./TrickTable.css";
 
 export default function TrickTable() {
-  const initialDeck = generateDeck();
   const genStartStateValue = () => {
     return {
       trickDeck: getShuffledTrickDeck(),
