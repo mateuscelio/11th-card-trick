@@ -10,7 +10,6 @@ import Card from "./Card";
 import "./TrickTable.css";
 
 export default function TrickTable() {
-  const initialDeck = generateDeck();
   const genStartStateValue = () => {
     return {
       trickDeck: getShuffledTrickDeck(),
@@ -56,7 +55,7 @@ export default function TrickTable() {
   const renderTrickTable = () => {
     if (state.cardChosen) {
       return (
-        <div>
+        <div data-testid="trick-result">
           <p>The card chosen was</p>
           <Card card={state.cardChosen} />
           <button onClick={handleRestartClick}>Restart</button>
@@ -64,7 +63,7 @@ export default function TrickTable() {
       );
     } else {
       return (
-        <div className="trick-table">
+        <div data-testid="trick-table" className="trick-table">
           <>{renderCards(COLUMNS_SEQUENCE.FIRST)}</>
           <>{renderCards(COLUMNS_SEQUENCE.SECOND)}</>
           <>{renderCards(COLUMNS_SEQUENCE.THIRD)}</>
