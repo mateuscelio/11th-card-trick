@@ -8,10 +8,17 @@
 .trick-table__cards {
   cursor: pointer;
   margin: 10px;
+  padding: 20px;
 }
 .trick-table__cards:hover {
   background-color: rgba(240, 240, 240, 0.411);
   margin: 9px;
   border-radius: 20px;
   border: solid 1px black;
+}
+
+.trick-result {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
 }
