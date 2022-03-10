@@ -16,9 +16,3 @@
   border-radius: 20px;
   border: solid 1px black;
 }
-
-.trick-result {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-}
