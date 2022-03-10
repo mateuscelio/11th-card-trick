@@ -1,17 +1,16 @@
 import { useState } from "react";
-import { generateDeck, shuffleDeck } from "../app";
 import {
   COLUMNS_SEQUENCE,
   iterateTrick,
   columnToCardOffset,
+  getShuffledTrickDeck,
 } from "../app/trick/trick";
 import Card from "./Card";
 import "./TrickTable.css";
 
 export default function TrickTable() {
-  const initialDeck = generateDeck();
   const [state, setState] = useState({
-    trickDeck: shuffleDeck(initialDeck).slice(0, 21),
+    trickDeck: getShuffledTrickDeck(),
     currentTrickStep: 0,
     cardChosen: null,
   });
