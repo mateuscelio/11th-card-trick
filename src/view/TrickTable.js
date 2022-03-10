@@ -4,6 +4,7 @@ import {
   iterateTrick,
   columnToCardOffset,
   getShuffledTrickDeck,
+  CARDS_PER_COLUMN,
 } from "../app/trick/trick";
 import Card from "./Card";
 import "./TrickTable.css";
@@ -35,9 +36,11 @@ export default function TrickTable() {
         className="trick-table__cards"
         onClick={() => handleColumnClick(column)}
       >
-        {state.trickDeck.slice(offset, 7 + offset).map((card) => (
-          <Card card={card} key={`${card.num}${card.suit}`} />
-        ))}
+        {state.trickDeck
+          .slice(offset, CARDS_PER_COLUMN + offset)
+          .map((card) => (
+            <Card card={card} key={`${card.num}${card.suit}`} />
+          ))}
       </div>
     );
   };

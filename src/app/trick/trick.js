@@ -1,8 +1,8 @@
 import { generateDeck, shuffleDeck } from "..";
 
-const CARDS_PER_COLUMN = 7;
 const TRICK_CARDS = 21;
 
+export const CARDS_PER_COLUMN = 7;
 export const COLUMNS_SEQUENCE = {
   FIRST: 1,
   SECOND: 2,
