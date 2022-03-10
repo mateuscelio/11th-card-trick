@@ -1,10 +1,18 @@
+import { generateDeck, shuffleDeck } from "..";
+
 const CARDS_PER_COLUMN = 7;
+const TRICK_CARDS = 21;
+const INITIAL_DECK = generateDeck();
 
 export const COLUMNS_SEQUENCE = {
   FIRST: 1,
   SECOND: 2,
   THIRD: 3,
 };
+
+export function getShuffledTrickDeck() {
+  return shuffleDeck(INITIAL_DECK).slice(0, TRICK_CARDS);
+}
 
 export function iterateTrick({ trickDeck, selectedColumn, currentStep }) {
   if (currentStep < 3) {
