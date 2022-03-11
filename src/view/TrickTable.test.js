@@ -24,7 +24,7 @@ describe("TrickTable component", () => {
       [...Array(3)].forEach(() => fireEvent.click(firstColumnEl));
       const trickResultEl = screen.getByTestId("trick-result");
 
-      expect(trickResultEl.childElementCount).toBe(3);
+      expect(trickResultEl).toBeInTheDocument();
     });
   });
 });
